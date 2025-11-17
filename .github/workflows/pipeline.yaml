@@ -1,0 +1,16 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: install dependencies
+        run: pip install -r requirements.txt
+      
+      - name: run the python file
+        run: python loading_model.ipynb
